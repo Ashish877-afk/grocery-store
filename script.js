@@ -185,7 +185,7 @@ addCartButton.forEach(function(button, index){
         let product =  products[index];
 
         cart.push(product);
-
+        localStorage.setItem("cart",JSON.stringify(cart));
         showCart();
 
 
@@ -210,6 +210,8 @@ function showCart(){
 
         `;
     });
+
+    localStorage.setItem("cart",JSON.stringify(cart));
 }
     function calculatTotal(){
 
@@ -245,6 +247,7 @@ function calculatTotal(){
 
     document.querySelector(".total-price").innerText = total;
 }
+showCart();
 
 let email = document.querySelector("#email");
 
